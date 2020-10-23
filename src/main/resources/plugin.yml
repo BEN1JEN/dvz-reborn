@@ -1,0 +1,87 @@
+name: DVZReborn
+main: space.ben1jen.DVZReborn.DVZReborn
+version: 1.0.0
+description: Classic Dwarves Vs. Zombies, back again!
+author: Command Team
+authors:
+  - BEN1JEN
+  - Saweron
+website: dvz.commandteam.space
+prefix: dvz
+commands:
+  dvzconfig:
+    description: configure DVZ Reborn
+    aliases:
+      - dvzconf
+      - dvzc
+      - zconf
+      - zconfig
+    permission: dvz.configurer
+    permission-message: You need the <permission> permission in order to configure DVZ Reborn.
+    usage: /&lt;command&gt; <key> [value] OR /&lt;command&gt; list
+  dvzgame:
+    description: Start/Stop DVZ Reborn games.
+    aliases:
+      - dvzg
+      - zgame
+    permission: dvz.control
+    permission-message: You need the <permission> permission in order to start/stop DVZ Reborn games.
+    usage: |
+      Command for
+      /&lt;command&gt; start OR
+      /&lt;command&gt; stop OR
+      /&lt;command&gt; min <count> - set the minimum players before the game starts OR
+      /&lt;command&gt; limit <count> - set the maximum players allowed in the game
+  dvzmod:
+    description: Start/Stop DVZ Reborn games.
+    aliases:
+      - dvzplayer
+      - dvzm
+      - dvzp
+      - zmod
+      - zplayer
+    permission: dvz.moderate
+    permission-message: You need the <permission> permission in order to moderate DVZ Reborn players.
+    usage: |
+      Command for moderating games of DVZ Reborn.
+      /&lt;command&gt; kick <player> [reason] - kick a player from the game and put them back in the lobby. OR
+      /&lt;command&gt; role <player> <role> [reason] - set a player to a dwarf or a zombie OR
+      /&lt;command&gt; give <player> <item> <count> [reason] - give a player an ingame item (not a minecraft item!) OR
+      /&lt;command&gt; take <player> <item> <count> [reason] - take an ingame item from a player (not a minecraft item!) OR
+      /&lt;command&gt; log - Show players who have had a moderation action taken on them.
+  dvzlobby:
+    description: Return to the DVZ lobby from the current game.
+    aliases:
+      - dvzexit
+      - dvzleave
+      - dlobby
+      - dexit
+      - dleave
+    permission: dvz.default
+    usage: /&lt;command&gt; - leave the game.
+  dvzrejoin:
+    description: Rejoin the DVZ Reborn game (as a zombie).
+    aliases:
+      - drejoin
+    permission: dvz.vip
+    usage: /&lt;command&gt; - rejoin the game.
+permissions:
+  dvz.default:
+    description: Default permissions, needed to be allowed to play the game.
+    default: true
+  dvz.vip:
+    description: Join in-progress games, bypass player limits.
+    default: op
+  dvz.moderate:
+    description: Move players between zombie/dwarf, change scores, give/clear items.
+    default: op
+    children:
+      dvz.vip: true
+  dvz.control:
+    description: Start/Stop games, change player limits.
+    default: op
+  dvz.config:
+    description: Change non-volatile config.
+    children:
+      dvz.control: true
+      dzv.moderate: true
