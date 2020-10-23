@@ -1,5 +1,5 @@
 name: DVZReborn
-main: space.ben1jen.DVZReborn.DVZReborn
+main: space.commandteam.DVZReborn
 version: 0.1.0
 description: Classic Dwarves Vs. Zombies, back again!
 author: Command Team
@@ -8,6 +8,8 @@ authors:
   - Saweron
 website: dvz.commandteam.space
 prefix: dvz
+api-version: 1.16
+load: POSTWORLD
 commands:
   dvzconfig:
     description: configure DVZ Reborn

@@ -36,3 +36,21 @@ hs_err_pid*
 
 # Intellij
 .idea
+
+# Test Server
+/testserver/banned-ips.json
+/testserver/banned-players.json
+/testserver/whitelist.json
+/testserver/ops.json
+/testserver/usercache.json
+/testserver/version_history.json
+/testserver/bukkit.yml
+/testserver/spigot.yml
+/testserver/paper.yml
+/testserver/commands.yml
+/testserver/permissions.yml
+/testserver/help.yml
+/testserver/world*
+/testserver/logs
+/testserver/cache
+/testserver/plugins/bStats
